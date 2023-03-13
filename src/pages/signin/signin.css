@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-.signup-container .left {
-  background-color: #0a192f;
-}
-
 .ui.form input:focus {
   border-color: #64ffda !important;
   box-shadow: #64ffda !important;
@@ -45,7 +41,7 @@
   color: white !important;
 }
 
-.signup-container .title {
+.signin-container .title {
   font-family: "IBM Plex Mono", monospace;
   font-style: normal;
   font-weight: 600;
@@ -54,37 +50,38 @@
   color: #64ffda;
 }
 
-.signup-container {
+.signin-container {
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
 }
 
-.signup-container .child {
+.signin-container .child {
   margin: auto;
   width: 100%;
 }
 
-.signup-container .left {
+.signin-container .left {
   flex-basis: 50%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(to bottom, #0d836a, #0b3650, #0a1930);
+}
+
+.signin-container .right {
   padding-left: 5vw;
   padding-right: 5vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.signup-container .right {
   flex-basis: 50%;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(to bottom, #0a1930, #0b3650, #0d836a);
+  background-color: #0a192f;
 }
 
-.signup-container .button {
+.signin-container .button {
   border: 2px solid #64ffda;
   border-radius: 10px;
   width: 200px;
@@ -101,16 +98,15 @@
   margin-top: 40px;
   background-blend-mode: screen;
 }
-.signup-container .button:hover {
+.signin-container .button:hover {
   cursor: pointer;
 }
-
-.signup-container .type-container {
+.signin-container .type-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.signup-container .typing {
+.signin-container .typing {
   width: 44vw;
   font-family: "IBM Plex Mono", monospace;
   font-style: normal;
@@ -139,7 +135,7 @@
   }
 }
 
-.signup-container .question {
+.signin-container .question {
   font-family: "IBM Plex Mono", monospace;
   font-style: normal;
   font-weight: 400;

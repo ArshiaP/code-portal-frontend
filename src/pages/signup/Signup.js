@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Container } from 'semantic-ui-react'
+import { Form } from 'semantic-ui-react'
 import './signup.css'
 
 function Signup() {
@@ -7,7 +7,7 @@ function Signup() {
     <div className='signup-container'>
       <div className="left">
         <div className="child">
-          <div className="title">Sign In</div>
+          <div className="title">Sign Up</div>
           <div className="form">
             <Form>
               <Form.Field>
@@ -35,8 +35,10 @@ function Signup() {
       </div>
       <div className="right">
         <div className="child">
-          <div className="typing">
-            printf(“Hello World”);
+          <div className='type-container'>
+            <div className="typing">
+              printf(“Hello World”);
+            </div>
           </div>
           <div className="question">
             Already have an account?
