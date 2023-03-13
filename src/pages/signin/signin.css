@@ -44,7 +44,7 @@
 .signin-container .title {
   font-family: "IBM Plex Mono", monospace;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 45px;
   line-height: 76px;
   color: #64ffda;
@@ -143,4 +143,15 @@
   line-height: 44px;
   color: #ffffff;
   margin-top: 3vw;
+}
+
+.signin-container .forgot {
+  text-align: left;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 25px;
+  font-family: "IBM Plex Mono", monospace;
+  color: #ffffff;
+  margin-top: 2.7vw;
 }

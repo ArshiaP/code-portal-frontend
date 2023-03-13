@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.editor-outer {
+  position: relative;
+}
+.editor-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.editor-container .left {
+  flex-basis: 50%;
+  background: #0a192f;
+  padding-top: 2vw;
+  padding-left: 4vw;
+  height: calc(100vh - 5vw);
+  overflow-y: scroll;
+}
+
+.editor-container .title {
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 46px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.editor-container .difficulty {
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: #27e127;
+  margin-right: 67px;
+}
+
+.editor-container .score {
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: #64ffda;
+}
+
+.editor-container .description {
+  margin-top: 28px;
+  width: 40vw;
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 25px;
+  color: #ffffff;
+  white-space: pre-wrap;
+  margin-bottom: 28px;
+}
+
+.editor-container .sample {
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 32px;
+  color: #64ffda;
+}
+
+.editor-container .sample-desc {
+  margin-top: 30px;
+  width: 40vw;
+  background: #112240;
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 40px;
+  color: #ffffff;
+  padding-left: 10px;
+  margin-bottom: 28px;
+}
+
+.editor-outer .foot {
+  position: absolute;
+  background: #112240;
+  height: 5vw;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editor-outer .child1,
+.child2 {
+  display: flex;
+}
+
+.editor-outer .child1 {
+  margin-left: 51px;
+}
+
+.editor-container .right {
+  flex-basis: 50%;
+  height: calc(100vh - 5vw);
+  overflow-y: scroll;
+}
+
+.editor-outer .problems,
+.leaderboard,.submit {
+  border: 2px solid #64ffda;
+  width: 130px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  color: #64ffda;
+  background-blend-mode: screen;
+}
+.editor-outer .problems {
+  margin-right: 30px;
+}
+.editor-outer .list {
+  margin-right: 10px;
+}
+
+.editor-outer .leaderboard {
+  width: 150px;
+}
+
+.editor-outer .status {
+  display: inline;
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 42px;
+  color: #64ffda;
+
+}
+
+.editor-outer .status-deets{
+  color:  #27E127;
+}
+
+.editor-outer .submit{
+  width: 100px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.editor-outer .code{
+  margin-right: 10px;
+  font-size: 20px;
+}
+

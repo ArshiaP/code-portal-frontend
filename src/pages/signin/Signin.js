@@ -35,6 +35,7 @@ function Signin() {
               <div className="button">
                 Sign In
               </div>
+              <div className='forgot'>Forgot password?</div>
             </Form>
           </div>
         </div>
