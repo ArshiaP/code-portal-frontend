@@ -1,11 +1,13 @@
 import React from 'react'
 import Component1 from '../home-component1/Component1'
 import Component2 from '../home-component2/Component2'
+import Navbar from '../navbar/Navbar'
 import './home.css'
 
 function Home() {
   return (
     <div className='home-container'>
+      <Navbar/>
       <label class='line-after'><span className='title'>Contests</span></label>
       <Component1/>
       <Component2/>

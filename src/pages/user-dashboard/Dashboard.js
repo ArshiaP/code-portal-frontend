@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from '../navbar/Navbar'
 import './dashboard.css'
 
 //CHECK TABLE
@@ -6,6 +7,7 @@ import './dashboard.css'
 function Dashboard() {
   return (
     <div className='db-container'>
+      <Navbar/>
       <label class='line-after'><span className='title'>User Dashboard</span></label>
       <div className='flex-box'>
         <div className='details-box'>

@@ -5,6 +5,7 @@ import Home from './pages/home/Home';
 import Dashboard from './pages/user-dashboard/Dashboard';
 import Signin from './pages/signin/Signin';
 import Editor from './pages/editor/Editor';
+import Navbar from './pages/navbar/Navbar';
 
 function App() {
   return (
