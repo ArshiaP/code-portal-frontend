@@ -6,6 +6,7 @@ import Dashboard from './pages/user-dashboard/Dashboard';
 import Signin from './pages/signin/Signin';
 import Editor from './pages/editor/Editor';
 import Navbar from './pages/navbar/Navbar';
+import SelectLang from './pages/editor/SelectLang';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path='/dashboard' element={<Dashboard/>}></Route>
         <Route exact path='/login' element={<Signin/>}></Route>
         <Route exact path='/code' element={<Editor/>}></Route>
+        <Route exact path='/lang' element={<SelectLang/>}></Route>
       </Routes>
     </BrowserRouter>
   );

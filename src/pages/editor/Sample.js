@@ -8,16 +8,16 @@ import 'ace-builds/src-noconflict/mode-python';
 
 // Import the GitHub Dark theme
 import 'ace-builds/src-noconflict/theme-tomorrow_night';
-// Import the C++ language tools module for autocompletion
+
 import 'ace-builds/src-noconflict/ext-language_tools';
 
-function Sample() {
+function Sample({lang}) {
   const [code, setCode] = React.useState('');
 
   return (
     <AceEditor
       className='custom-editor'
-      mode="c_cpp" // Set the mode to C and C++
+      mode={lang} // Set the mode to C and C++
       theme="tomorrow_night"
       value={code}
       onChange={setCode}
