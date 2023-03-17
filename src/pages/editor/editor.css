@@ -6,21 +6,6 @@
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-  background-color: #0b192e !important;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #0b192e !important;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #0b192e !important;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
 
 .editor-outer {
   position: relative;
@@ -129,7 +114,6 @@
   flex-basis: 50%;
   height: calc(100vh - 100px);
   max-height: calc(100vh - 100px);
-  overflow-y: scroll;
   width: 100%;
 }
 
@@ -214,9 +198,9 @@
 
 .cross {
   color: white;
-  font-size: 25px;
+  font-size: 35px;
   cursor: pointer;
-  margin-left: 450px;
+  margin-left: 445px;
   margin-top: 10px;
 }
 
@@ -228,10 +212,153 @@
   top: 0;
   left: -487px;
   transition: left 0.5s;
+  border-right: solid 2px #1d1f21;
 }
 
 .problems-sidebar.show {
   left: 0;
 }
 
+.problems-sidebar .title {
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 51px;
+  color: #ffffff;
+  margin-left: 22px;
+}
 
+.problems-sidebar .score {
+  font-family: "IBM Plex Mono", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: #64ffda;
+  margin-left: 83px;
+}
+
+.problems-sidebar .diff {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  font-family: "IBM Plex Mono", monospace;
+  color: #27e127;
+  margin-left: 82px;
+}
+
+.problems-line {
+  border-color: #b9b9b9;
+  border-width: 0.1px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.leaderboard-popup {
+  width: 500px;
+  height: 400px;
+  background: #112240;
+  border: 1px solid #64ffda;
+  box-shadow: 2px 0px 10px #64ffda;
+  font-family: "IBM Plex Mono", monospace;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.leaderboard-popup .title {
+  font-style: normal;
+  font-weight: 200;
+  font-size: 30px;
+  line-height: 51px;
+  color: #64ffda;
+  text-align: center;
+}
+
+.leaderboard-popup .trophy {
+  margin-left: 20px;
+}
+
+.leaderboard-popup .leaderboard-line {
+  border-color: #64ffda;
+  border-width: 0.1px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.leaderboard-popup .content {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.leaderboard-popup .leaderboard-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.leaderboard-popup .leaderboard-heading > div {
+  font-style: normal;
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 32px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #aeaeae;
+}
+
+.leaderboard-popup .details {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.leaderboard-popup .details > div {
+  font-style: normal;
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 32px;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.leaderboard-popup .details > div:first-of-type{
+  margin-left: 10px;
+}
+
+.leaderboard-popup .details > div:last-of-type{
+  margin-right: 10px;
+}
+
+.leaderboard-popup .details-container{
+  max-height: 260px;
+  overflow-y: scroll;
+}
+
+.leaderboard-cross{
+  position: absolute;
+  top: -48px;
+  right: -45px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.hide{
+  display: none;
+}

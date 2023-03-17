@@ -6,6 +6,7 @@ import QuestionFooter from './QuestionFooter'
 import Sample from './Sample'
 import SelectLang from './SelectLang'
 import Problems from './Problems'
+import Leaderboard from './Leaderboard'
 
 
 function Editor() {
@@ -24,6 +25,7 @@ function Editor() {
         <QuestionFooter lang={lang} setLang={setLang} />
         <Problems></Problems>
       </div>
+      <Leaderboard></Leaderboard>
     </>
   )
 }

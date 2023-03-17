@@ -11,11 +11,15 @@ function QuestionFooter({lang, setLang}) {
     element.classList.add('show');
   }
 
+  function showLeaderboard(){
+    document.querySelector('.leaderboard-popup').classList.remove('hide');
+  }
+
   return (
     <div className='foot'>
       <div className='child1'>
         <div className='problems' onClick={slideIn}><AiOutlineUnorderedList className='list' />Problems</div>
-        <div className='leaderboard'><AiOutlineTrophy className='list' />Leaderboard</div>
+        <div className='leaderboard' onClick={showLeaderboard}><AiOutlineTrophy className='list' />Leaderboard</div>
       </div>
       <div className='child2'>
         <SelectLang lang={lang} setLang={setLang}></SelectLang>

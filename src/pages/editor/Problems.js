@@ -1,5 +1,5 @@
 import React from 'react'
-import {ImCross} from 'react-icons/im'
+import {RxCross2} from 'react-icons/rx'
 
 function Problems() {
 
@@ -10,12 +10,19 @@ function Problems() {
 
   return (
     <div className='problems-sidebar'>
-      <ImCross className='cross' onClick={slideOut}></ImCross>
+      <RxCross2 className='cross' onClick={slideOut}></RxCross2>
 
       <div className="question">
         <div className="title">1. question</div>
-        <span className="score">score: 100</span>
+        <span className="score">points: 100</span>
         <span className="diff">easy</span>
+        <hr className='line' />
+      </div>
+      <div className="question">
+        <div className="title">1. question</div>
+        <span className="score">points: 100</span>
+        <span className="diff">easy</span>
+        <hr className='problems-line' />
       </div>
     </div>
   )

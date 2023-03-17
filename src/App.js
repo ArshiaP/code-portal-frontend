@@ -7,6 +7,7 @@ import Signin from './pages/signin/Signin';
 import Editor from './pages/editor/Editor';
 import Navbar from './pages/navbar/Navbar';
 import SelectLang from './pages/editor/SelectLang';
+import Leaderboard from './pages/editor/Leaderboard';
 
 function App() {
   return (
