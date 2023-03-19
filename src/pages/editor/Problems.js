@@ -16,7 +16,7 @@ function Problems() {
         <div className="title">1. question</div>
         <span className="score">points: 100</span>
         <span className="diff">easy</span>
-        <hr className='line' />
+        <hr className='problems-line' />
       </div>
       <div className="question">
         <div className="title">1. question</div>
