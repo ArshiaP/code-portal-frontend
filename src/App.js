@@ -8,19 +8,22 @@ import Editor from './pages/editor/Editor';
 import Navbar from './pages/navbar/Navbar';
 import SelectLang from './pages/editor/SelectLang';
 import Leaderboard from './pages/editor/Leaderboard';
+import { AuthProvider } from './context/auth';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path='/signup' element={<Signup />} />
-        <Route exact path='/' element={<Home/>}></Route>
-        <Route exact path='/dashboard' element={<Dashboard/>}></Route>
-        <Route exact path='/login' element={<Signin/>}></Route>
-        <Route exact path='/code' element={<Editor/>}></Route>
-        <Route exact path='/lang' element={<SelectLang/>}></Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/signup' element={<Signup />} />
+          <Route exact path='/' element={<Home />}></Route>
+          <Route exact path='/dashboard' element={<Dashboard />}></Route>
+          <Route exact path='/login' element={<Signin />}></Route>
+          <Route exact path='/code' element={<Editor />}></Route>
+          <Route exact path='/lang' element={<SelectLang />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

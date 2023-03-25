@@ -50,8 +50,9 @@
   font-style: normal;
   font-weight: 500;
   font-size: 45px;
-  line-height: 76px;
+  line-height: 60px;
   color: #64ffda;
+  margin-top: -5px;
 }
 
 .signup-container {
@@ -98,7 +99,7 @@
   font-weight: 600;
   font-size: 25px;
   color: #64ffda;
-  margin-top: 40px;
+  margin-top: 20px;
   background-blend-mode: screen;
 }
 .signup-container .button:hover {
@@ -147,4 +148,14 @@
   line-height: 44px;
   color: #ffffff;
   margin-top: 3vw;
+}
+
+
+.error{
+  padding: 0;
+  margin: 0;
+  margin-top: -12px;
+  margin-bottom: -10px;
+  text-align: left;
+  color: rgb(165, 41, 41);
 }
