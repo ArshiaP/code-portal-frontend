@@ -49,6 +49,8 @@ function Signup() {
 
   const [addUser, { loading2, error2, data2 }] = useMutation(REGISTER_USER, {
     update(proxy, result) {
+      context.login(result.data.register)
+      navigate('/')
       console.log(data2);
       console.log(result);
     },

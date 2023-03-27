@@ -1,7 +1,40 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { Form } from 'semantic-ui-react'
 import './signin.css'
+import { AuthContext } from '../../context/auth'
+import { useNavigate } from 'react-router-dom';
+import { gql, useMutation } from '@apollo/client'
+
 function Signin() {
+  const context = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
+  const [values, setValues] = useState({
+    email: '',
+    password: '',
+  })
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value })
+  }
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setErrors({})
+    login();
+  }
+
+  const [login, { loading, error, data}] = useMutation(LOGIN_USER, {
+    update(proxy, result) {
+      console.log(result)
+      context.login(result.data.login)
+      navigate('/')
+    },
+    onError(e) {
+      console.log(e);
+      setErrors(e.graphQLErrors[0].extensions.errors)
+    },
+    variables: values
+  })
+
   return (
     <div className='signin-container'>
       <div className="left">
@@ -14,9 +47,11 @@ function Signin() {
           <div className="question">
             Do not have an account?
           </div>
-          <div className="button">
-            Sign Up
-          </div>
+          <a href="/signup">
+            <div className="button">
+              Sign Up
+            </div>
+          </a>
         </div>
       </div>
       <div className="right">
@@ -26,13 +61,15 @@ function Signin() {
             <Form>
               <Form.Field>
                 <label>Email ID</label>
-                <input placeholder='Email ID' />
+                <Form.Input error={errors.email ? true : false} name='email' value={values.email} onChange={onChange} placeholder='Email ID' />
+                {errors.email ? (<div className='error'>{errors.email}</div>) : null}
               </Form.Field>
               <Form.Field>
                 <label>Password</label>
-                <input type={'password'} placeholder='Password' />
+                <Form.Input type={'password'} placeholder='Password' error={errors.password ? true : false} name='password' value={values.password} onChange={onChange} />
+                {errors.password ? (<div className='error'>{errors.password}</div>) : null}
               </Form.Field>
-              <div className="button">
+              <div className="button" onClick={handleLogin}>
                 Sign In
               </div>
               <div className='forgot'>Forgot password?</div>
@@ -43,5 +80,24 @@ function Signin() {
     </div>
   )
 }
+
+const LOGIN_USER = gql`
+mutation Mutation($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    id
+    username
+    email
+    token
+    isAdmin
+    isVerified
+    phone
+    college
+    contests {
+      contestTitle
+      points
+    }
+  }
+}
+`
 
 export default Signin
