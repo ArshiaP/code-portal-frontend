@@ -4,7 +4,7 @@ import { AiOutlineUnorderedList, AiOutlineTrophy } from 'react-icons/ai'
 import { BsCodeSlash } from 'react-icons/bs'
 import SelectLang from './SelectLang'
 
-function QuestionFooter({lang, setLang}) {
+function QuestionFooter({lang, setLang,status, onSubmit}) {
 
   function slideIn() {
     var element = document.querySelector('.problems-sidebar');
@@ -23,8 +23,8 @@ function QuestionFooter({lang, setLang}) {
       </div>
       <div className='child2'>
         <SelectLang lang={lang} setLang={setLang}></SelectLang>
-        <div className='status'> Status : <span className='status-deets'>Accepted</span></div>
-        <div className='submit'><BsCodeSlash className='code' />Submit</div>
+        <div className='status'> Status : <span className='status-deets'>{status}</span></div>
+        <div className='submit' onClick={onSubmit}><BsCodeSlash className='code' />Submit</div>
       </div>
     </div>
   )

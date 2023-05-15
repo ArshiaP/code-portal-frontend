@@ -11,6 +11,10 @@
   margin-left: 3.54vw;
 }
 
+.home-component2-wrapper:hover{
+  cursor: pointer;
+}
+
 .home-component2-wrapper .inner {
   display: flex; 
   justify-content: flex-end;
@@ -18,8 +22,8 @@
 }
 
 .home-component2-wrapper .contest-image {
-  width: 52.8vw;
-  height: 23.69vw;
+  max-width: 52.8vw;
+  max-height: 23.69vw;
   background-color: #294753;
 }
 .home-component2-wrapper .image{

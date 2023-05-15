@@ -1,4 +1,3 @@
-import { lang } from 'moment';
 import React, { useState } from 'react'
 import { Dropdown } from 'semantic-ui-react';
 
@@ -15,7 +14,7 @@ function SelectLang({lang, setLang}) {
   };
 
   return (
-    <Dropdown id='select-lang' defaultValue={options[0].value} fluid selection options={options}  onChange={handleChange} />
+    <Dropdown id='select-lang' value={lang} fluid selection options={options}  onChange={handleChange} />
   )
 }
 

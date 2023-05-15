@@ -9,14 +9,18 @@
 .home-component1-wrapper {
   margin-left: 3.54vw;
 }
+.home-component1-wrapper:hover{
+  cursor: pointer;
+}
+
 
 .home-component1-wrapper .inner {
   position: relative;
 }
 
 .home-component1-wrapper .contest-image {
-  width: 52.8vw;
-  height: 23.69vw;
+  max-width: 52.8vw;
+  max-height: 23.69vw;
   background-color: #294753;
 }
 .home-component1-wrapper .image{

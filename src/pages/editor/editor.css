@@ -6,7 +6,6 @@
   box-sizing: border-box;
 }
 
-
 .editor-outer {
   position: relative;
 }
@@ -44,7 +43,6 @@
   font-size: 20px;
   line-height: 32px;
   color: #27e127;
-  margin-right: 67px;
 }
 
 .editor-container .score {
@@ -54,6 +52,7 @@
   font-size: 20px;
   line-height: 32px;
   color: #64ffda;
+  margin-left: 35px;
 }
 
 .editor-container .description {
@@ -158,7 +157,8 @@
 }
 
 .editor-outer .status-deets {
-  color: #27e127;
+  color: white;
+  font-weight: 400;
 }
 
 .editor-outer .submit {
@@ -219,6 +219,10 @@
   left: 0;
 }
 
+.problems-sidebar .question {
+  cursor: pointer;
+}
+
 .problems-sidebar .title {
   font-family: "IBM Plex Mono", monospace;
   font-style: normal;
@@ -275,8 +279,12 @@
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .leaderboard-popup .title {
@@ -337,20 +345,20 @@
   color: white;
 }
 
-.leaderboard-popup .details > div:first-of-type{
+.leaderboard-popup .details > div:first-of-type {
   margin-left: 10px;
 }
 
-.leaderboard-popup .details > div:last-of-type{
+.leaderboard-popup .details > div:last-of-type {
   margin-right: 10px;
 }
 
-.leaderboard-popup .details-container{
+.leaderboard-popup .details-container {
   max-height: 260px;
   overflow-y: scroll;
 }
 
-.leaderboard-cross{
+.leaderboard-cross {
   position: absolute;
   top: -48px;
   right: -45px;
@@ -359,6 +367,56 @@
   cursor: pointer;
 }
 
-.hide{
+.hide {
   display: none;
+}
+
+.results-container {
+  max-width: 50%;
+  width: 50%;
+  position: absolute;
+  top: calc(50% - 100px);
+  animation: fadeIn 0.5s;
+}
+
+.results-container .header {
+  font-family: "Antikor Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 50px;
+  color: #ffffff;
+  height: 50px;
+  background-color: #0e3a55;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.results-cross {
+  font-size: 30px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.results-container .content .title {
+  font-family: "Antikor Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+  margin-top: 8px;
+}
+
+.results-container .content{
+  background-color: white;
+  max-height: 50vh;
+  height: 50vh;
+  overflow-y: scroll;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 17px;
+  color: rgb(70, 70, 70);
 }

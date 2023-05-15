@@ -1,19 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AceEditor from 'react-ace';
-
-// Import the language mode for C and C++
 import 'ace-builds/src-noconflict/mode-c_cpp';
 import 'ace-builds/src-noconflict/mode-java';
 import 'ace-builds/src-noconflict/mode-python';
-
-// Import the GitHub Dark theme
 import 'ace-builds/src-noconflict/theme-tomorrow_night';
-
 import 'ace-builds/src-noconflict/ext-language_tools';
 
-function Sample({lang}) {
-  const [code, setCode] = React.useState('');
-
+function CodeArea({lang, setCode, code}) {
   return (
     <AceEditor
       className='custom-editor'
@@ -36,4 +29,4 @@ function Sample({lang}) {
   );
 }
 
-export default Sample
+export default CodeArea

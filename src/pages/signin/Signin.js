@@ -4,6 +4,8 @@ import './signin.css'
 import { AuthContext } from '../../context/auth'
 import { useNavigate } from 'react-router-dom';
 import { gql, useMutation } from '@apollo/client'
+import { Navigate } from "react-router-dom";
+
 
 function Signin() {
   const context = useContext(AuthContext);
@@ -34,7 +36,7 @@ function Signin() {
     },
     variables: values
   })
-
+  if (!localStorage.getItem("jwtToken")) {
   return (
     <>
       <Dimmer active={loading}>
@@ -86,6 +88,10 @@ function Signin() {
       </div>
     </>
   )
+  }
+  else {
+    return <Navigate to="/" replace />;
+  }
 }
 
 const LOGIN_USER = gql`

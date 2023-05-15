@@ -6,7 +6,6 @@ import './navbar.css'
 
 function Navbar() {
   const context = useContext(AuthContext);
-  console.log(context)
   return (
     <div className='navbar-container'>
       <Link to='/'><div className="logo">ieee</div></Link>
