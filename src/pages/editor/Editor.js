@@ -32,36 +32,36 @@ function Editor() {
 
 
   useEffect(() => {
-    let key = contestId+questionNo
+    let key = contestId + questionNo
     if (lang === 'java') {
       setValues({ ...values, langId: 62 })
-      if (localStorage.getItem(contestId + questionNo) && JSON.parse(localStorage.getItem(contestId + questionNo))['lang'] === 'java'){
-        let stored_value = JSON.parse(localStorage.getItem(key)) 
+      if (localStorage.getItem(contestId + questionNo) && JSON.parse(localStorage.getItem(contestId + questionNo))['lang'] === 'java') {
+        let stored_value = JSON.parse(localStorage.getItem(key))
         setCode(stored_value['code'])
       }
-      else{
+      else {
         setCode('\/\/ Use class name Main\r\n\r\nclass Main {\r\n    public static void main(String[] args) {\r\n        \r\n    }\r\n}')
       }
     }
     else if (lang === 'python') {
       setValues({ ...values, langId: 71 })
-      if (localStorage.getItem(contestId + questionNo) && JSON.parse(localStorage.getItem(contestId + questionNo))['lang'] === 'python'){
+      if (localStorage.getItem(contestId + questionNo) && JSON.parse(localStorage.getItem(contestId + questionNo))['lang'] === 'python') {
         let stored_value = JSON.parse(localStorage.getItem(key))['code']
         setCode(stored_value)
       }
-      else{
+      else {
         setCode('')
       }
     }
     else if (lang === 'c_cpp') {
       setValues({ ...values, langId: 52 })
-      if (localStorage.getItem(contestId + questionNo) && JSON.parse(localStorage.getItem(contestId + questionNo))['lang'] === 'c_cpp'){
+      if (localStorage.getItem(contestId + questionNo) && JSON.parse(localStorage.getItem(contestId + questionNo))['lang'] === 'c_cpp') {
         let stored_value = JSON.parse(localStorage.getItem(key))['code']
         setCode(stored_value)
-      }else{
+      } else {
         setCode('#include<bits/stdc++.h>\nusing namespace std;\n\nint main()\n{\n    return 0;\n}')
       }
-      
+
     }
   }, [lang, questionNo, contestId])
 
@@ -82,7 +82,6 @@ function Editor() {
     }
     localStorage.setItem(key, JSON.stringify(value))
   }
-
   const [submitCode, { loading: loading2 }] = useMutation(SUBMIT_CODE, {
     update(proxy, result) {
       setResults(result.data.submit)
@@ -120,6 +119,7 @@ function Editor() {
   }, [])
 
   useEffect(() => {
+    setValues({ ...values, questionNo: parseInt(questionNo), contestId: contestId })
     if (contestDetails.questions) {
       for (var i = 0; i < userDetails.contests.length; i++) {
         if (userDetails.contests[i].contestId === contestId) {
@@ -127,7 +127,7 @@ function Editor() {
           if (userDetails.contests[i].points[questionNo] === contestDetails.questions[questionNo].points) {
             setStatus('Accepted')
           }
-          else{
+          else {
             setStatus('Unsolved')
           }
         }
