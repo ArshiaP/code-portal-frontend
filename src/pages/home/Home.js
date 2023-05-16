@@ -15,21 +15,26 @@ function Home() {
 
   return (
     <>
-      <Dimmer active={loading}>
-        <Loader size='massive' content="Loading" />
-      </Dimmer>
-      <div className='home-container'>
-        <Navbar />
-        <label className='line-after'><span className='title'>Contests</span></label>
-        {
-          data ? (data.getContests.map((contest, id) => {
-            if (id % 2 == 0)
-              return <Component1 title={contest.title} description={contest.description} start={contest.start} end={contest.end} image={contest.image} id={contest.id} />
-            else
-              return <Component2 title={contest.title} description={contest.description} start={contest.start} end={contest.end} image={contest.image} id={contest.id} />
-          })) : null
-        }
-      </div>
+      {data ?
+        <>
+          <div className='home-container'>
+            <Navbar />
+            <label className='line-after'><span className='title'>Contests</span></label>
+            {
+              data ? (data.getContests.map((contest, id) => {
+                if (id % 2 == 0)
+                  return <Component1 title={contest.title} description={contest.description} start={contest.start} end={contest.end} image={contest.image} id={contest.id} />
+                else
+                  return <Component2 title={contest.title} description={contest.description} start={contest.start} end={contest.end} image={contest.image} id={contest.id} />
+              })) : null
+            }
+          </div>
+        </> :
+        <Dimmer active={loading}>
+          <Loader size='massive' content="Loading" />
+        </Dimmer>
+      }
+
     </>
   )
 }
