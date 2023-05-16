@@ -31,17 +31,14 @@ function Signup() {
   const handleRegister = async (e) => {
     e.preventDefault();
     await setValues({ ...values, otp: parseInt(values.otp) })
-    console.log(values)
     setErrors({})
     addUser()
   }
   const [getOtp, { loading: loading1, error: error1, data: data1 }] = useMutation(GET_OTP, {
     update(proxy, result) {
-      console.log(result);
       setOtp(true)
     },
     onError(e) {
-      console.log(e.graphQLErrors[0].extensions.errors);
       setErrors(e.graphQLErrors[0].extensions.errors)
     },
     variables: values
@@ -51,10 +48,8 @@ function Signup() {
     update(proxy, result) {
       context.login(result.data.register)
       navigate('/')
-      console.log(result);
     },
     onError(e) {
-      console.log(e.graphQLErrors[0].extensions.errors);
       setErrors(e.graphQLErrors[0].extensions.errors)
     },
     variables: values

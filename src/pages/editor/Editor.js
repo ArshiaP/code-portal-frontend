@@ -30,14 +30,13 @@ function Editor() {
   })
   const [errors, setErrors] = useState({});
 
+
   useEffect(() => {
-    console.log('ue1');
     let key = contestId+questionNo
     if (lang === 'java') {
       setValues({ ...values, langId: 62 })
       if (localStorage.getItem(contestId + questionNo) && JSON.parse(localStorage.getItem(contestId + questionNo))['lang'] === 'java'){
         let stored_value = JSON.parse(localStorage.getItem(key)) 
-        console.log(lang)
         setCode(stored_value['code'])
       }
       else{
@@ -92,8 +91,6 @@ function Editor() {
       setLocalStorageCode()
     },
     onError(e) {
-      console.log(e)
-      console.log(e.graphQLErrors[0].extensions.errors)
       setErrors(e.graphQLErrors[0].extensions.errors)
     },
     variables: { ...values, code }
@@ -102,7 +99,6 @@ function Editor() {
   const [getUser] = useLazyQuery(GET_USER, {
     fetchPolicy: 'network-only',
     onCompleted: (result) => {
-      // console.log(result);
       setUserDetails(result.getUser)
     },
   });
@@ -110,7 +106,6 @@ function Editor() {
   const [getContest] = useLazyQuery(GET_CONTEST, {
     fetchPolicy: 'network-only',
     onCompleted: (result) => {
-      // console.log(result);
       setContestDetails(result.getContest)
     },
   });
@@ -125,13 +120,15 @@ function Editor() {
   }, [])
 
   useEffect(() => {
-    console.log('ue2');
     if (contestDetails.questions) {
       for (var i = 0; i < userDetails.contests.length; i++) {
         if (userDetails.contests[i].contestId === contestId) {
           setUserPoints(userDetails.contests[i].points[questionNo])
           if (userDetails.contests[i].points[questionNo] === contestDetails.questions[questionNo].points) {
             setStatus('Accepted')
+          }
+          else{
+            setStatus('Unsolved')
           }
         }
       }
@@ -140,7 +137,6 @@ function Editor() {
     if (localStorage.getItem(key)) {
       let stored_value = JSON.parse(localStorage.getItem(key))
       setLang(stored_value['lang'])
-      console.log(lang)
     }
   }, [userDetails, questionNo, contestId])
 

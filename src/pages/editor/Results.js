@@ -9,8 +9,6 @@ function Results({ results }) {
     document.querySelector('.results-container').classList.add('hide');
   }
 
-  // console.log(results);
-
   const [testCasesPassed, setTestCasesPassed] = useState(0);
   const [totalTestCases, setTotalTestCases] = useState(0);
   const [expectedOutput, setExpectedOutput] = useState('');
@@ -30,7 +28,6 @@ function Results({ results }) {
       setStdout('')
       setCompileError('')
       setTotalTestCases(results.length)
-      console.log(results);
       let p = 0;
       for (let i = 0; i < results.length; i++) {
         if (results[i].status_id === 3) {

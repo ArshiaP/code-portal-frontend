@@ -26,12 +26,10 @@ function Signin() {
 
   const [login, { loading, error, data }] = useMutation(LOGIN_USER, {
     update(proxy, result) {
-      console.log(result)
       context.login(result.data.login)
       navigate('/')
     },
     onError(e) {
-      console.log(e);
       setErrors(e.graphQLErrors[0].extensions.errors)
     },
     variables: values

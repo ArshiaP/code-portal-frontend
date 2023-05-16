@@ -17,7 +17,6 @@ function Dashboard() {
   const [getUser] = useLazyQuery(GET_USER, {
     fetchPolicy: 'network-only',
     onCompleted: (result) => {
-      console.log(result);
       setUserDetails(result.getUser)
     },
   });
