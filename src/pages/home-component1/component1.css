@@ -36,12 +36,13 @@
 }
 
 .home-component1-wrapper .title {
-  text-align: right;
   font-weight: 600;
   font-size: 2.5vw;
   line-height: 3.19vw;
   color: white;
   margin-bottom: 2.43vw;
+  width: 43vw;
+  text-align: right;
 }
 
 .home-component1-wrapper .contest-desc {
