@@ -8,7 +8,7 @@ function Navbar() {
   const context = useContext(AuthContext);
   return (
     <div className='navbar-container'>
-      <Link to='/'><div className="logo">ieee</div></Link>
+      <Link to='/'><div className="logo">Code Portal</div></Link>
       {context.user ? <Link to='/dashboard'><div className='name'>{context.user.username[0].toUpperCase()}</div></Link> : 
       <div className='name-loggedout'>
       <Link to='/login'><div className='nav-login'>Login</div></Link>

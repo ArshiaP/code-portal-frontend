@@ -84,12 +84,14 @@ function Editor() {
   }
   const [submitCode, { loading: loading2 }] = useMutation(SUBMIT_CODE, {
     update(proxy, result) {
+      console.log(result)
       setResults(result.data.submit)
       getUser()
       document.querySelector('.results-container').classList.remove('hide');
       setLocalStorageCode()
     },
     onError(e) {
+      console.log(e)
       setErrors(e.graphQLErrors[0].extensions.errors)
     },
     variables: { ...values, code }

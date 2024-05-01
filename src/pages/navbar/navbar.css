@@ -17,6 +17,9 @@
 
 .navbar-container .logo{
   margin-left: 51px;
+  color: #64ffda;
+  font-size: 20px;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 .navbar-container .name{
